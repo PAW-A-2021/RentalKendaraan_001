@@ -1,0 +1,60 @@
+﻿@model IEnumerable<RentalKendaraan.Models.Peminjaman>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<p>Ketersediaan : <select></select> Cari Data : <input /><button>Filter</button></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Tgl Peminjaman")
+            </th>
+            <th>
+                @Html.DisplayName("Biaya")
+            </th>
+            <th>
+                @Html.DisplayName("Nama Customer")
+            </th>
+            <th>
+                @Html.DisplayName("Nama Jaminan")
+            </th>
+            <th>
+                @Html.DisplayName("Nama Kendaraan")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TglPeminjaman)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Biaya)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCostumerNavigation.NamaCustomer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdJaminanNavigation.NamaJaminan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdKendaraanNavigation.NamaKendaraan)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdPeminjaman"><i class="fa fa-marker fa-lg"></i></a> |
+                <a asp-action="Details" asp-route-id="@item.IdPeminjaman"><i class="fa fa-list fa-lg"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.IdPeminjaman"><i class="fa fa-trash-alt fa-lg"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

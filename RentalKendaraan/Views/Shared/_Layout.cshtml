@@ -1,6 +1,8 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+          integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - RentalKendaraan</title>
@@ -21,9 +23,18 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+                        <li class="dropdown">
+                            <ul class="dropdown-toggle" data-toggle="dropdown">Daftar Rental</ul>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Index">Customer</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Peminjaman" asp-action="Index">Peminjaman</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Pengembalian" asp-action="Index">Pengembalian</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Kendaraan" asp-action="Index">Kendaraan</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="JenisKendaraan" asp-action="Index">Jenis Kendaraan</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="KondisiKendaraan" asp-action="Index">Kondisi Kendaraan</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Jaminan" asp-action="Index">Jaminan</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Gender" asp-action="Index">Gender</a></li>
+                            </ul>
                     </ul>
                 </div>
             </div>
